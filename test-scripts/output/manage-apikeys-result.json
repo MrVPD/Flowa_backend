@@ -1,0 +1,11 @@
+{
+  "message": "API keys updated successfully",
+  "apiKeys": [
+    {
+      "service": "openai",
+      "key": "sk-test-api-key-12345",
+      "isActive": true,
+      "_id": "680a064c33e8919b4f01e7d0"
+    }
+  ]
+}
