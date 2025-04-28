@@ -22,6 +22,19 @@ const userSchema = new mongoose.Schema(
       enum: ['admin', 'brand_manager', 'content_creator'],
       default: 'content_creator',
     },
+    isEmailVerified: {
+      type: Boolean,
+      default: false,
+    },
+    verificationToken: {
+      type: String,
+    },
+    verificationTokenExpiry: {
+      type: Date,
+    },
+    googleId: {
+      type: String,
+    },
     brands: [
       {
         type: mongoose.Schema.Types.ObjectId,

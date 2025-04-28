@@ -33,9 +33,11 @@ import socialMediaRoutes from './routes/socialMediaRoutes.js';
 import analyticsRoutes from './routes/analyticsRoutes.js';
 import integrationRoutes from './routes/integrationRoutes.js';
 import settingsRoutes from './routes/settingsRoutes.js';
+import authRoutes from './routes/authRoutes.js';
 
 // Use routes
 app.use('/api/users', userRoutes);
+app.use('/api/auth', authRoutes);
 app.use('/api/brands', brandRoutes);
 app.use('/api/themes', themeRoutes);
 app.use('/api/products', productRoutes);

@@ -4,7 +4,10 @@ import {
   loginUser, 
   getUserProfile, 
   updateUserProfile,
-  manageApiKeys
+  manageApiKeys,
+  beginRegistration,
+  completeRegistration,
+  verifyEmail,
 } from '../controllers/authController.js';
 import { protect, admin } from '../middleware/authMiddleware.js';
 
@@ -12,14 +15,16 @@ const router = express.Router();
 
 // Public routes
 router.post('/register', registerUser);
+router.post('/register-begin', beginRegistration);
+router.post('/register-complete', completeRegistration);
 router.post('/login', loginUser);
+router.get('/verify-email/:token', verifyEmail);
 
 // Protected routes
 router.route('/profile')
   .get(protect, getUserProfile)
   .put(protect, updateUserProfile);
 
-router.route('/apikeys')
-  .put(protect, manageApiKeys);
+router.put('/api-keys', protect, manageApiKeys);
 
 export default router;
